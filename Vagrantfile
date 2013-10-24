@@ -10,10 +10,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "precise64_puppet"
   config.vm.box_url = "http://puppet-vagrant-boxes.puppetlabs.com/ubuntu-server-12042-x64-vbox4210.box"
 
-  #dummy box for AWS:
-  #config.vm.box = "dummy"
-  #config.vm.box_url = "https://github.com/mitchellh/vagrant-aws/raw/master/dummy.box"
-  
   config.vm.network :forwarded_port, guest: 80, host: 8080
   config.vm.network :forwarded_port, guest: 8080, host: 8081
   config.vm.provider :virtualbox do |vb|
@@ -30,6 +26,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
   
   config.vm.provider :aws do |aws, override|
+    #dummy box for AWS:
+    #config.vm.box = "dummy"    
+	#config.vm.box_url = "https://github.com/mitchellh/vagrant-aws/raw/master/dummy.box"
+
     aws.access_key_id = "AKIAJNTVXK5CH3P5JOHA"
     aws.secret_access_key = "DzK0GIIWKvzEHs+8nKZpCJUzVTSZ3QzA5SPTuIov"
     aws.keypair_name = "puppet"
