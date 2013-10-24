@@ -30,8 +30,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     #config.vm.box = "dummy"    
 	#config.vm.box_url = "https://github.com/mitchellh/vagrant-aws/raw/master/dummy.box"
 
-    aws.access_key_id = "AKIAJNTVXK5CH3P5JOHA"
-    aws.secret_access_key = "DzK0GIIWKvzEHs+8nKZpCJUzVTSZ3QzA5SPTuIov"
+    aws.access_key_id = "AKIAJGIUBMSQYNA5VB4Q"
+    aws.secret_access_key = "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"
     aws.keypair_name = "puppet"
     aws.region = "eu-west-1"
     aws.instance_type = "t1.micro"
