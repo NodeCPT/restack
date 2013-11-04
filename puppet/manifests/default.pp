@@ -11,12 +11,16 @@ jenkins::plugin { "git" : ; }
 jenkins::plugin { "job-dsl" : ; }
 include jenkinsjobs
 
+
+### Start of the node server configs. Would normally be a different server ###
+
 class { 'mongodb':
   init => 'upstart',
   enable_10gen => true,
 }
 
-include redis
+#include redis
+include nodejs
 
 #exec { "apt-get update":
 #  path => "/usr/bin",
