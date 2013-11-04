@@ -4,12 +4,12 @@ group { "puppet":
 
 include 'motd'
 
-include jenkinsjobs
 include jenkins
 jenkins::plugin { "port-allocator": version => "1.5" } 
 jenkins::plugin { "scm-api" : ; }
 jenkins::plugin { "git" : ; }
 jenkins::plugin { "job-dsl" : ; }
+include jenkinsjobs
 
 class { 'mongodb':
   init => 'upstart',
