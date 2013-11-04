@@ -20,7 +20,9 @@ class { 'mongodb':
 }
 
 #include redis
-include nodejs
+class { 'nodejs':
+	manage_repo => true,
+}
 
 #exec { "apt-get update":
 #  path => "/usr/bin",
