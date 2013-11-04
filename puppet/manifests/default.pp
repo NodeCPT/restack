@@ -1,9 +1,9 @@
-### MOTD ###
 notice("Setting the MOTD")
 group { "puppet":
 	ensure => "present",
 }
 
+### MOTD ###
 File { owner => 0, group => 0, mode => 0644 }
 file { '/etc/motd':
 	content => "Welcome to your Vagrant-built virtual machine for ReSTack! Managed by Puppet.\n"
@@ -14,9 +14,11 @@ file { '/etc/motd':
 notice("Setting up Jenkins")
 include jenkins
 notice("Setting up Jenkins - Plugins")
-jenkins::plugin { "port-allocator": version => "1.5" }
+jenkins::plugin { "port-allocator": version => "1.5" } 
+jenkins::plugin { "scm-api" : ; }
 jenkins::plugin { "git" : ; }
 jenkins::plugin { "job-dsl" : ; }
+include jenkinsjobs
 ### END ###
 
 ### Mongo ###

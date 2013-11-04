@@ -27,18 +27,20 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   
   config.vm.provider :aws do |aws, override|
     #dummy box for AWS:
-    #config.vm.box = "dummy"    
-	#config.vm.box_url = "https://github.com/mitchellh/vagrant-aws/raw/master/dummy.box"
+    config.vm.box = "dummy"    
+	config.vm.box_url = "https://github.com/mitchellh/vagrant-aws/raw/master/dummy.box"
 
     aws.access_key_id = "AKIAJGIUBMSQYNA5VB4Q"
     aws.secret_access_key = "M9YUDhGr589FKLzM/eMRqCBgtgLVauQQnNNnfLCG"
     aws.keypair_name = "puppet"
     aws.region = "eu-west-1"
     aws.instance_type = "t1.micro"
-    aws.ami = "ami-149f7863"
+	#aws.ami = "ami-ecd8efa9"
+    aws.ami = "ami-e21dfd95"
     aws.security_groups = [ 'vagrant' ]
     aws.user_data = "#!/bin/sh\nsed -i -e '/requiretty/ d' /etc/sudoers\n"	
-    override.ssh.username = "ec2-user"
+    #override.ssh.username = "ec2-user"
+	override.ssh.username = "ubuntu"
     override.ssh.private_key_path = "puppet/puppet.pem"
   end
   

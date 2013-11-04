@@ -28,7 +28,7 @@ install_git() {
 
 install_ruby() {
 echo 'Attempting to install ruby.'
-  $(which apt-get > /dev/null 2>&1)
+  $(which apt-get )
   FOUND_APT=$?
   $(which yum > /dev/null 2>&1)
   FOUND_YUM=$?
@@ -102,3 +102,5 @@ if [ "$(gem search -i librarian-puppet)" = "false" ]; then
 else
   cd $PUPPET_DIR && librarian-puppet update
 fi
+
+
