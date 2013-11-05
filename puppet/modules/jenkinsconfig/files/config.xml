@@ -18,7 +18,7 @@
     <javaposse.jobdsl.plugin.ExecuteDslScripts plugin="job-dsl@1.18">
       <targets>setup_jenkins.groovy</targets>
       <usingScriptText>false</usingScriptText>
-      <ignoreExisting>true</ignoreExisting>
+      <ignoreExisting>false</ignoreExisting>
       <removedJobAction>IGNORE</removedJobAction>
     </javaposse.jobdsl.plugin.ExecuteDslScripts>
   </builders>

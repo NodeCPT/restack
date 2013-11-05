@@ -8,10 +8,10 @@ def mainBuildDeploy = "${mainBuild} - Deploy latest build"
 job {
 	name "${mainBuildDeploy}"
 	steps {
-		shell('mkdir -p /var/www/restack/build_$BUILD_NUMBER_${BUILD_ID}')
-		copyArtifacts("${mainBuild}", "", "/var/www/restack/build_$BUILD_NUMBER_${BUILD_ID", false, false) { lastestSuccessful() }
+		shell('mkdir -p /var/www/restack/build_${BUILD_NUMBER}_${BUILD_ID}')
+		copyArtifacts("${mainBuild}", "", "/var/www/restack/build_${BUILD_NUMBER}_${BUILD_ID}", false, false) { latestSuccessful(); }
 		shell('rm -rf /var/www/restack/current')
-		shell('ln -s /var/www/restack/build_$BUILD_NUMBER_${BUILD_ID} /var/www/restack/current')
+		shell('ln -s /var/www/restack/build_${BUILD_NUMBER}_${BUILD_ID} /var/www/restack/current')
 	}
 }
 
