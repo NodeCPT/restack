@@ -1,4 +1,11 @@
 class jenkinsjobs {
+    file { '/var/www':
+        ensure => directory,
+        mode => '0755',
+        owner => 'jenkins',
+        group => 'nogroup',
+    }
+
     file { '/var/lib/jenkins/jobs/setup-jenkins':
         ensure => directory,
         mode => '0755',

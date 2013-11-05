@@ -9,6 +9,7 @@ jenkins::plugin { "port-allocator": version => "1.5" }
 jenkins::plugin { "scm-api" : ; }
 jenkins::plugin { "git" : ; }
 jenkins::plugin { "job-dsl" : ; }
+jenkins::plugin { "copyartifact" : ; }
 include jenkinsjobs
 
 
